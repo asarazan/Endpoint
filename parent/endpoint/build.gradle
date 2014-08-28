@@ -1,7 +1,17 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+repositories {
+    maven {
+        url 'https://github.com/asarazan/maven-repository/raw/master/'
+    }
+}
+
+version = '1.0.0'
+group = 'net.sarazan.endpoint'
 
 android {
-    compileSdkVersion 'android-L'
+    compileSdkVersion 20
     buildToolsVersion "20.0.0"
 
     defaultConfig {
@@ -9,7 +19,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 20
         versionCode 1
-        versionName "1.0"
+        versionName version
     }
 
     compileOptions {
@@ -21,6 +31,10 @@ android {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
     }
 }
 
