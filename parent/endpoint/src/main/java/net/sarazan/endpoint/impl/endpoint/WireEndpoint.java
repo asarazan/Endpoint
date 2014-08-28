@@ -1,7 +1,5 @@
 package net.sarazan.endpoint.impl.endpoint;
 
-import android.content.Context;
-
 import com.squareup.wire.Message;
 
 import net.sarazan.endpoint.impl.serializer.WireSerializer;
@@ -16,8 +14,8 @@ public abstract class WireEndpoint<T extends Message, R extends Message> extends
 
     private static final String TAG = "WireEndpoint";
 
-    protected WireEndpoint(@NotNull Context context, @NotNull Class<R> cls) {
-        super(context);
+    protected WireEndpoint(@NotNull Class<R> cls) {
+        super();
         setSerializer(new WireSerializer<T, R>(cls));
     }
 

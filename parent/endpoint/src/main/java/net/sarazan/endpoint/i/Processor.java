@@ -1,7 +1,5 @@
 package net.sarazan.endpoint.i;
 
-import android.content.Context;
-
 import com.squareup.okhttp.Request.Builder;
 
 import org.jetbrains.annotations.NotNull;
@@ -12,5 +10,5 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface Processor {
 
-    void processRequest(@NotNull Context context, @NotNull Builder requestBuilder);
+    void processRequest(@NotNull Builder requestBuilder);
 }
